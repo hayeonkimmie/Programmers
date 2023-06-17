@@ -51,3 +51,8 @@ def solution(num_list):
 # _ 홀짝에 따라 다른 값 반환하기
 def solution(n):
     return sum(range(1,n+1,2)) if n%2==1 else sum([v**2 for v in range(0,n+1,2)])
+
+# _ 대소문자 바꿔서 출력하기
+
+sentence = "ABcdeFGhi"
+print(''.join([s.lower() if s.isupper() else s.upper() for s in sentence]))
