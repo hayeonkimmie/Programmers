@@ -147,8 +147,6 @@ def solution(arr):
             
     return answer
 
-print(solution(arr))
-
 #_ 콜라츠 추측
 
 def solution(num):
