@@ -103,50 +103,6 @@ def solution(a, b):
 def solution(a, b):
     return (abs(a - b) + 1) * (a + b) // 2
 
-
-#_ 스택/큐 - 같은 숫자는 싫어
-
-#* 값을 하나씩 넣고 나서 마지막 값이랑 직전값이랑 비교해서 빼는 방법(스택 : LAST IN FIRST OUT)
-def solution(arr):
-    value_list = []
-    for i in arr:
-        value_list.append(i)
-        if len(value_list) == 1:
-            continue
-
-        if value_list[-1] == value_list[-2]:
-            value_list.pop()
-    return value_list
-
-# # 다른 풀이 
-
-#* 넣기 전에 마지막 원소랑 넣으려는 원소랑 비교해서 빼는 방법 
-def solution(arr):
-    value_list = []
-    value_list.append(arr[0])
-    for i in range(1, len(arr)):
-        if arr[i] == value_list[-1]:
-            continue
-        else:
-            value_list.append(arr[i])
-    return value_list
-
-# # 다른 풀이 
-
-#* 원소를 넣기전에 검사하고 중복이면 넣지 않는 방법
-def solution(arr):
-    answer = []
-    
-    for word in arr:
-        if len(answer) == 0:
-            answer.append(word)
-        else:
-            if answer[-1:] == [word]: continue
-            
-            answer.append(word)
-            
-    return answer
-
 #_ 콜라츠 추측
 
 def solution(num):
