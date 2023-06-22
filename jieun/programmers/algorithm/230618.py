@@ -1,12 +1,9 @@
 
 #TODO 스택 / 큐
-
 #_  같은 숫자는 싫어
-
 #* 새로운 원소를 넣기 전에 검사
 def solution(arr):
     answer = []
-    
     for idx_arr in range(len(arr)):
         if idx_arr == 0:
             answer.append(arr[idx_arr])
@@ -17,9 +14,7 @@ def solution(arr):
             tmp = arr[idx_arr]
     return answer
 
-
 # # 다른 풀이 
-
 #* 새로운 원소를 일단 넣고 전이랑 같은지 검사
 def solution(arr):
     answer = []
@@ -30,12 +25,9 @@ def solution(arr):
         else:
             if answer[-2] == answer[-1]: 
                 answer.pop()
-    
     return answer
 
-
 # # 다른 풀이 
-
 #* 함수
 def solution(arr):
     answer = []
@@ -46,9 +38,7 @@ def solution(arr):
     return answer
         
 #_  기능개발
-
 from math import ceil
-
 #* 코드는 실행되나 일부 테스트에서 런타임 에러
 def solution(progresses, speeds):
     dayLeft = list(map(lambda x: (ceil((100 - progresses[x]) / speeds[x])), range(len(progresses))))
@@ -66,11 +56,8 @@ def solution(progresses, speeds):
             publishList.append(count)
     return publishList
 
-
 # # 다른 풀이 
-
 #* 스택
-
 from math import ceil
 def solution(progresses, speeds):
     answer = []
@@ -86,7 +73,6 @@ def solution(progresses, speeds):
     return answer
 
 #_  올바른 괄호
-
 #* 스택
 def solution(s):
     stack = []
@@ -104,7 +90,6 @@ def solution(s):
         return True
     else:
         return False
-
 
 #_ 프로세스
 
@@ -131,7 +116,6 @@ def solution(priorities, location):
     while True:
         #* 큐에서 맨 앞에 요소를 빼내고
         current = myQueue.pop(0)
-        
         #* any : 안에 조건 중 하나라도 있으면,
         #* myQueue 안에 (인덱스, 우선순위) 튜플 중 우선순위 값들을 비교
         if any(current[1] < q[1] for q in myQueue):
