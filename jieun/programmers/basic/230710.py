@@ -40,6 +40,10 @@ def solution(n_str):
     return str(int(n_str))
 
 #_ 행렬의 덧셈
+#* arr1[0][0] += arr2[0][0]
+#* arr1[0][1] += arr2[0][1]
+#* arr1[1][0] += arr2[1][0]
+#* arr1[1][1] += arr2[1][1]
 def solution(arr1, arr2):
     for idx_row in range(len(arr1)):
         for idx_col in range(len(arr1[0])):
@@ -67,7 +71,7 @@ def solution(s):
 # # 다른 풀이
 def solution(s):
     mylist = []
-    s = s.split(' ')
+    s = s.split()
     for word in s:
         if word:
             mylist.append(word[0].upper() + word[1:].lower())
@@ -90,6 +94,9 @@ def solution(n, m):
 
 # # 다른 풀이
 #* 유클리드 호제법
+#* 숫자 a, b가 있을 때, a를 b로 나눈 나머지와 b의 최대공약수는 a와 b의 최대공약수가 같다는 것을 의미
+#* 반복해서 a를 b로 나누어서 b를 a에 나눈 나머지를 b에 대입시켜서 b가 0이 될때까지 반복 하면, 남는 a값이 최대공약수
+#* 최소공배수는 a와 b의 곱을 a, b의 최대 공약수로 나누면 된다.
 def solution(n, m):
     gcd = lambda a, b : b if not a % b else gcd(b, a % b)
     lcm = lambda a, b : a * b // gcd(a, b)
